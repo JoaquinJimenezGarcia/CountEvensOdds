@@ -9,7 +9,7 @@ public class Main {
         final int SIZE = 100; // Size of the Array
         final int ARRAY [] = new int[SIZE]; // Empty array for fill with the random number
         final int MAX = 99; // Max limit of the number generated
-        final int MIN = 0; // Min limit of the nomber generated
+        final int MIN = 0; // Min limit of the number generated
 
         fillArray(ARRAY, MAX, MIN);
         printArray(ARRAY);
@@ -58,6 +58,7 @@ public class Main {
         System.out.println("COUNT");
         System.out.println("=====");
 
+        /* Less effective
         int initNumber = 0, finalNumber = 9;
         int quantity;
 
@@ -71,6 +72,22 @@ public class Main {
             }
 
             System.out.println(initNumber+"..."+finalNumber+": " + quantity + " numbers");
+            initNumber += 10;
+            finalNumber +=10;
+        }
+        System.out.println();
+        */
+
+        // More effective
+        int tens[] = new int [10];
+        int initNumber = 0, finalNumber = 9;
+
+        for (int i = 0; i < arrayCount.length; i++) {
+            tens[arrayCount[i]/10]++;
+        }
+
+        for (int i = 0; i < tens.length ; i++) {
+            System.out.println(initNumber+"..."+finalNumber+": " + tens[i] + " numbers");
             initNumber += 10;
             finalNumber +=10;
         }
